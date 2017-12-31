@@ -91,35 +91,33 @@ ridge_augerr <- c()
 ridge_err <- c()
 direct_augerr <- c()
 direct_err <- c()
-data_points <- c(0.00001, 0.0001,0.0005,0.001,0.005,0.01,0.05,0.1,0.2,0.4,0.6,0.8,1)
 
-if (TRUE) for(lmbda in data_points){
-if(TRUE){
-w <- rep(0,11)
-w <- optimize(x_train,y_train,lasso,lmbda,eta,w=w,iterations,viz=FALSE)
-mse <- sum((w %*% apply(matrix(x_test,ncol=1), 1, function(x) eqn_(x,w)) - y_test)^2)
-cat(paste(lmbda,paste(w,collapse=" "),mse,"\n"))
-lasso_augerr <- c(lasso_augerr, sum((w %*% apply(matrix(x_train,ncol=1), 1, function(x) eqn_(x,w)) - y_test)^2 + lmbda * sum(abs(w))))
-lasso_err <- c(lasso_err, mse)
-}
+# The different amounts of regularization to use.
+data_points <- c(0.00001, 0.0001,0.0005,0.001,0.005,0.01,0.05,0.1,0.2,0.4,0.6,0.8,1) 
 
-if(TRUE){
-w <- rep(0,11)
-w <- optimize(x_train,y_train,ridge,lmbda,eta,w=w,iterations,viz=FALSE)
-mse <- sum((w %*% apply(matrix(x_test,ncol=1), 1, function(x) eqn_(x,w)) - y_test)^2)
-cat(paste(lmbda,paste(w,collapse=" "),mse,"\n"))
-ridge_augerr <- c(ridge_augerr, sum((w %*% apply(matrix(x_train,ncol=1), 1, function(x) eqn_(x,w)) - y_test)^2 + lmbda * sum(w^2)))
-ridge_err <- c(ridge_err, mse)
-}
+# Train a model with each regularization value.
+for (lmbda in data_points) {
+    # Trai
+    w <- rep(0,11)
+    w <- optimize(x_train,y_train,lasso,lmbda,eta,w=w,iterations,viz=FALSE)
+    mse <- sum((w %*% apply(matrix(x_test,ncol=1), 1, function(x) eqn_(x,w)) - y_test)^2)
+    cat(paste(lmbda,paste(w,collapse=" "),mse,"\n"))
+    lasso_augerr <- c(lasso_augerr, sum((w %*% apply(matrix(x_train,ncol=1), 1, function(x) eqn_(x,w)) - y_test)^2 + lmbda * sum(abs(w))))
+    lasso_err <- c(lasso_err, mse)
 
-if(TRUE){
-xs <- apply(matrix(x_train,ncol=1),1,function(x) eqn_(x,rep(0,11)))
-w <- direct(xs, y_train, lmbda)
-mse <- sum((t(w) %*% apply(matrix(x_test,ncol=1), 1, function(x) eqn_(x,w)) - y_test)^2)
-cat(paste(lmbda,paste(w,collapse=" "),mse,"\n"))
-direct_augerr <- c(direct_augerr, sum((t(w) %*% apply(matrix(x_train,ncol=1), 1, function(x) eqn_(x,w)) - y_test)^2 + lmbda * sum(w^2)))
-direct_err <- c(direct_err, mse)
-}
+    w <- rep(0,11)
+    w <- optimize(x_train,y_train,ridge,lmbda,eta,w=w,iterations,viz=FALSE)
+    mse <- sum((w %*% apply(matrix(x_test,ncol=1), 1, function(x) eqn_(x,w)) - y_test)^2)
+    cat(paste(lmbda,paste(w,collapse=" "),mse,"\n"))
+    ridge_augerr <- c(ridge_augerr, sum((w %*% apply(matrix(x_train,ncol=1), 1, function(x) eqn_(x,w)) - y_test)^2 + lmbda * sum(w^2)))
+    ridge_err <- c(ridge_err, mse)
+
+    xs <- apply(matrix(x_train,ncol=1),1,function(x) eqn_(x,rep(0,11)))
+    w <- direct(xs, y_train, lmbda)
+    mse <- sum((t(w) %*% apply(matrix(x_test,ncol=1), 1, function(x) eqn_(x,w)) - y_test)^2)
+    cat(paste(lmbda,paste(w,collapse=" "),mse,"\n"))
+    direct_augerr <- c(direct_augerr, sum((t(w) %*% apply(matrix(x_train,ncol=1), 1, function(x) eqn_(x,w)) - y_test)^2 + lmbda * sum(w^2)))
+    direct_err <- c(direct_err, mse)
 }
 
 # Output comparison graphs
