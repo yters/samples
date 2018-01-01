@@ -10,7 +10,7 @@ Run the script:
 
 `RScript lasso.r`
 
-It will produce two EPS images showing how varying the parameters for the regularization methods produce more accurate models than unregularized regression.
+It will produce two EPS images showing which parameter values for the regularization methods produce more accurate models than unregularized regression.
 
 ## memetic.py
 The `memetic.py` Python script is an agent swarm model demonstrating how ideas spread virally through a population, and how a few individuals can significantly impact which ideas the population adopts.
