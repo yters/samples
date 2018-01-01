@@ -23,7 +23,7 @@ Each step of the model simulation will output a line which contains the overall 
 
 The population quickly converges to a small set of ideas, which demonstrates how it only takes a few individuals to significantly impact a large population.  
 
-For example, the following printout shows a population converging on two ideas, signified by the numbers 672 and 888. Meanwhile, the overall interest level of the population climbs from 11581 to 14592.  This printout shows that population excitation and convergence and related.
+For example, the following printout shows a population converging on three ideas, signified by the numbers 515, 672 and 888. Meanwhile, the overall interest level of the population climbs from 11581 to 14592.  This printout shows population excitation and idea convergence are related.
 
     11581 [(354, 36), (515, 1), (528, 2), (672, 20), (888, 1)]
     12067 [(354, 48), (515, 1), (528, 1), (672, 9), (888, 1)]
