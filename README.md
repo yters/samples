@@ -21,7 +21,18 @@ Run the script:
 
 Each step of the model simulation will output a line which contains the overall interest level of the population and a list of idea ID numbers and how many agents have adopted that particular idea.
 
-The population quickly converges to a small set of ideas, which demonstrates how it only takes a few individuals to significantly impact a large population.
+The population quickly converges to a small set of ideas, which demonstrates how it only takes a few individuals to significantly impact a large population.  For example, the following printout shows a population converging on two ideas, signified by the numbers 672 and 888, while the overall interest level of the population climbs from 11581 to 14592.  This printout shows that population excitation and convergence and related.
+
+    11581 [(354, 36), (515, 1), (528, 2), (672, 20), (888, 1)]
+    12067 [(354, 48), (515, 1), (528, 1), (672, 9), (888, 1)]
+    12275 [(354, 51), (515, 1), (672, 7), (888, 1)]
+    12556 [(354, 45), (515, 1), (672, 13), (888, 1)]
+    12874 [(354, 36), (515, 1), (672, 22), (888, 1)]
+    13195 [(354, 28), (515, 1), (672, 30), (888, 1)]
+    13588 [(354, 19), (515, 1), (672, 39), (888, 1)]
+    14429 [(354, 4), (515, 1), (672, 54), (888, 1)]
+    14592 [(515, 1), (672, 58), (888, 1)]
+    14592 [(515, 1), (672, 58), (888, 1)]
 
 ## token_counter.c
 
