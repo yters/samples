@@ -38,7 +38,7 @@ For example, the following printout shows a population converging on three ideas
     14592 [(515, 1), (672, 58), (888, 1)]
     14592 [(515, 1), (672, 58), (888, 1)]
 
-For further script options type `python memetic.py -h`.
+For further details and script options type `python memetic.py -h`.
 
 ## token_counter.c
 
