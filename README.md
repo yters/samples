@@ -3,14 +3,16 @@ This repo contains a set of demo programs in R, Python and C.
 
 
 
-## lasso.r
-The `lasso.r` R script compares ridge and lasso regularization for function regression.  
+## regularization.r
+The `regularization.r` R script compares ridge and lasso regularization for function regression.  
 
 Run the script:
 
-`RScript lasso.r`
+`RScript regularization.r`
 
 It will produce two EPS images showing which parameter values for the regularization methods produce more accurate models than unregularized regression.
+
+To see regularization in action, run the script from inside R interactive mode with `source("regularization.r")`.  You will see how well the different techniques are able to fit a polynomial model to a set of noisy data points sampled from a trigonometric function.
 
 ## memetic.py
 The `memetic.py` Python script is an agent swarm model demonstrating how ideas spread virally through a population, and how a few individuals can significantly impact which ideas the population adopts.
