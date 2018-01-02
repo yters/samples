@@ -15,15 +15,15 @@ It will produce two EPS images showing which parameter values for the regulariza
 To see regularization in action, run the script from inside R interactive mode with `source("regularization.r")`.  You will see how well the different techniques are able to fit a polynomial model to a set of noisy data points sampled from a trigonometric function.
 
 ## memetic.py
-The `memetic.py` Python script is an agent swarm model demonstrating how ideas spread virally through a population, and how a few individuals can significantly impact which ideas the population adopts.
+The `memetic.py` Python script is a swarm simulation modelling how ideas spread virally through a population.  Additionally, the simulation shows a few individuals can significantly impact which ideas the population adopts.
 
 Run the script:
 
-`python memetic.py`
+`python memetic.py r`
 
 Each step of the model simulation will output a line which contains the overall interest level of the population and a list of idea ID numbers and how many agents have adopted that particular idea.
 
-The population quickly converges to a small set of ideas, which demonstrates how it only takes a few individuals to significantly impact a large population.  
+The population quickly converges to a small set of ideas. This demonstrates that a few individuals can significantly impact a larger population.  
 
 For example, the following printout shows a population converging on three ideas, signified by the numbers 515, 672 and 888. Meanwhile, the overall interest level of the population climbs from 11581 to 14592.  This printout shows population excitation and idea convergence are related.
 
@@ -37,6 +37,8 @@ For example, the following printout shows a population converging on three ideas
     14429 [(354, 4), (515, 1), (672, 54), (888, 1)]
     14592 [(515, 1), (672, 58), (888, 1)]
     14592 [(515, 1), (672, 58), (888, 1)]
+
+For further script options type `python memetic.py -h`.
 
 ## token_counter.c
 
